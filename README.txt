@@ -1,20 +1,13 @@
-ARC PLAY GAMES — SINGLE FILE VERSION
+ARC PLAY GAMES — FUTURISTIC TEXT EDITION
 
-IMPORTANT:
-This version has the VIDEO and LOGO EMBEDDED INSIDE index.html.
-You do NOT need an assets folder.
+Upload only index.html.
 
-Upload ONLY:
-    index.html
+This edition keeps the embedded background video and logo, but changes the website copy into a more futuristic / sci-fi / GameFi style.
 
-Why this version:
-Your live screenshot showed a broken logo and no video, which means the browser could not find the external asset files. This single-file build removes that dependency.
+Main hero:
+ENTER. PLAY.
+ASCEND.
 
-AUDIO:
-The video starts muted because Chrome/Android blocks autoplay with sound. Tap “Tap to enable cinematic audio” to turn the supplied video's audio on.
+The wording is intentionally promotional and forward-looking, without presenting future launch claims as guaranteed facts.
 
-X:
-Every Follow button goes to https://x.com/ArcPlayGames
-
-USERNAME:
-This demo stores submissions in browser localStorage. For permanent collection in Google Sheets, use the previous V2 package's Google Apps Script setup.
+X links still point to @ArcPlayGames.
