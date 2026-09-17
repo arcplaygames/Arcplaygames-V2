@@ -1,19 +1,16 @@
-ARC PLAY GAMES — SINGLE FILE / GITHUB READY
+ARC PLAY GAMES — 2050 WEBSITE WITH 4 GAME IMAGES
 
-Upload ONLY index.html.
+This is the actual website package, not an image mockup.
 
-The background video and logo are embedded directly inside index.html.
-No assets folder is needed.
+The four game artworks are embedded directly into index.html:
+1. Project Nova
+2. Shadow Protocol
+3. Arc Racer
+4. The Sanctum
 
-The embedded video was compressed specifically to keep the complete HTML
-below GitHub's 25 MB single-file upload limit.
+The existing background video and logo remain embedded in this single HTML file.
 
-The video remains portrait and is used as the full-page cinematic background.
-Audio is included, but mobile browsers normally require a user gesture before
-autoplaying audio.
+Upload ONLY index.html to GitHub.
+No assets folder is required.
 
-X buttons point to:
-https://x.com/ArcPlayGames
-
-Note: username submissions in this version remain local to the visitor's
-browser unless a central backend (such as Google Apps Script) is connected.
+The four artwork panels appear in the Games section and are responsive on mobile.
