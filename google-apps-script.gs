@@ -1,0 +1,3 @@
+const SHEET_NAME="Submissions";
+function sheet_(){const ss=SpreadsheetApp.getActiveSpreadsheet();let sh=ss.getSheetByName(SHEET_NAME);if(!sh)sh=ss.insertSheet(SHEET_NAME);if(sh.getLastRow()===0)sh.appendRow(["Timestamp","X Username","Wallet"]);return sh}
+function doPost(e){try{const d=JSON.parse(e.postData.contents||"{}"),u=String(d.username||"").trim(),w=String(d.wallet||"").trim();if(!u)throw Error("Missing username");sheet_().appendRow([new Date(),u,w]);return ContentService.createTextOutput(JSON.stringify({ok:true})).setMimeType(ContentService.MimeType.JSON)}catch(err){return ContentService.createTextOutput(JSON.stringify({ok:false,error:String(err)})).setMimeType(ContentService.MimeType.JSON)}}

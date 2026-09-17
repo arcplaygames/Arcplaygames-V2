@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08020f">
+<title>Arc Play Games — The Arc GameFi Era</title>
+<meta name="description" content="Arc Play Games — a premium GameFi ecosystem being built on Arc Network.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap');
+:root{--p:#9a4dff;--p2:#6b2cff;--c:#6df7ff;--bg:#050208;--txt:#fff;--muted:#d2c8df;--line:rgba(191,126,255,.27)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--txt);font-family:Inter,Arial,sans-serif;font-weight:700;overflow-x:hidden}
+#bg{position:fixed;inset:0;z-index:-20;background:#050208;overflow:hidden}
+#bg .fill{position:absolute;inset:-7%;width:114%;height:114%;object-fit:cover;filter:blur(35px) saturate(1.45) brightness(.45);transform:scale(1.08);opacity:.9}
+#bg .fit{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;filter:saturate(1.1) brightness(.88);z-index:1}
+#bg:after{content:"";position:absolute;inset:0;z-index:2;background:radial-gradient(ellipse at center,rgba(6,0,16,.03) 10%,rgba(5,0,13,.35) 55%,rgba(3,0,8,.91) 100%),linear-gradient(180deg,rgba(3,0,8,.48),rgba(4,0,10,.62))}
+.glow{position:fixed;width:360px;height:360px;border-radius:50%;filter:blur(100px);opacity:.22;z-index:-5;pointer-events:none}.g1{left:-150px;top:18%;background:#7a28ff}.g2{right:-170px;bottom:10%;background:#d42fff}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;padding:16px clamp(16px,5vw,70px);display:flex;justify-content:space-between;align-items:center;background:linear-gradient(180deg,rgba(3,1,8,.9),rgba(3,1,8,.28),transparent);backdrop-filter:blur(10px)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}.mark{width:46px;height:46px;border-radius:15px;border:1px solid rgba(207,155,255,.58);background:linear-gradient(145deg,rgba(145,65,255,.35),rgba(20,8,36,.4));display:grid;place-items:center;box-shadow:0 0 30px rgba(148,70,255,.27);overflow:hidden}.mark img{width:100%;height:100%;object-fit:cover;mix-blend-mode:screen;opacity:.85}.brand-name{font-family:"Space Grotesk";font-weight:800;letter-spacing:.03em;font-size:15px}
+.navright{display:flex;align-items:center;gap:9px}.btn{border:1px solid rgba(203,151,255,.4);background:rgba(94,36,157,.25);color:#fff;text-decoration:none;border-radius:14px;padding:12px 16px;font-weight:900;font-size:13px;box-shadow:0 0 25px rgba(128,52,255,.12);cursor:pointer}.x{background:linear-gradient(135deg,rgba(137,62,255,.42),rgba(72,24,137,.34))}.wallet.connected{border-color:rgba(109,247,255,.5)}
+main{position:relative}.hero{min-height:100svh;padding:130px 20px 80px;display:grid;place-items:center;text-align:center}.hero-inner{width:min(1000px,100%);padding:50px 0}
+.badge{display:inline-flex;align-items:center;gap:9px;padding:10px 16px;border:1px solid var(--line);border-radius:999px;background:rgba(67,20,107,.3);box-shadow:0 0 35px rgba(129,48,255,.14);font-size:11px;letter-spacing:.16em;text-transform:uppercase}.dot{width:8px;height:8px;background:#57f5c4;border-radius:50%;box-shadow:0 0 14px #57f5c4}
+h1{font-family:"Space Grotesk";font-size:clamp(58px,10.5vw,132px);line-height:.82;letter-spacing:-.065em;margin:30px 0 25px;text-shadow:0 0 42px rgba(158,79,255,.32)}h1 span{background:linear-gradient(100deg,#fff 10%,#e6d5ff 42%,#a95dff 72%,#71f5ff);-webkit-background-clip:text;color:transparent}
+.hero p{max-width:810px;margin:auto;color:#eee7f4;font-size:clamp(15px,1.9vw,19px);line-height:1.72;text-shadow:0 3px 22px rgba(0,0,0,.8)}.hero p b{color:#fff}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:32px}.primary{background:linear-gradient(135deg,#b45cff,#6932ff);border:0;padding:16px 22px;box-shadow:0 14px 45px rgba(116,44,255,.36)}.secondary{background:rgba(255,255,255,.07);padding:16px 22px}
+.sound{margin:24px auto 0;display:inline-flex;align-items:center;gap:8px;color:#ddd2eb;background:rgba(7,2,15,.48);border:1px solid rgba(200,147,255,.25);border-radius:999px;padding:9px 13px;font-size:11px;cursor:pointer}
+section{padding:100px 20px}.wrap{max-width:1100px;margin:auto}.title{text-align:center;font-family:"Space Grotesk";font-size:clamp(35px,5vw,60px);line-height:1;margin:0 0 14px}.sub{text-align:center;color:var(--muted);line-height:1.75;max-width:740px;margin:0 auto 42px;font-size:15px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{padding:28px;border:1px solid var(--line);border-radius:26px;background:rgba(8,3,19,.63);backdrop-filter:blur(20px);box-shadow:inset 0 1px rgba(255,255,255,.08),0 30px 80px rgba(0,0,0,.3)}.ico{width:48px;height:48px;display:grid;place-items:center;border-radius:16px;border:1px solid rgba(190,124,255,.35);background:rgba(121,48,201,.18);font-size:21px;margin-bottom:20px}.card h3{font-family:"Space Grotesk";font-size:21px;margin:0 0 10px}.card p{color:#d0c5dc;font-size:14px;line-height:1.72;margin:0}
+.join{max-width:780px;margin:auto}.form{border:1px solid rgba(193,130,255,.35);border-radius:30px;padding:30px;background:rgba(7,2,16,.78);backdrop-filter:blur(22px);box-shadow:0 35px 100px rgba(0,0,0,.4)}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:block;font-size:13px;margin-bottom:8px}.field{width:100%;padding:15px;border-radius:15px;border:1px solid rgba(199,148,255,.24);background:rgba(255,255,255,.055);color:#fff;font:inherit;font-size:14px;outline:none}.field:focus{border-color:#a65cff;box-shadow:0 0 0 4px rgba(150,72,255,.12)}.agree{display:flex;gap:10px;align-items:flex-start;margin:16px 0;color:#c9bed7;font-size:12px;line-height:1.5}.agree input{accent-color:#9451ff;margin-top:3px}.formbottom{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.status{font-size:11px;color:#a99eb7}
+.social{display:flex;justify-content:space-between;align-items:center;gap:20px;border:1px solid var(--line);border-radius:25px;padding:25px;background:rgba(7,2,16,.7);backdrop-filter:blur(18px)}.social strong{font-family:"Space Grotesk";font-size:21px}.social small{display:block;color:#bfb3ca;margin-top:6px;font-size:12px}
+footer{text-align:center;padding:35px 20px 65px;color:#a79cad;font-size:11px}
+#toast{position:fixed;z-index:100;right:16px;bottom:18px;max-width:350px;padding:14px 16px;border:1px solid rgba(194,134,255,.42);border-radius:14px;background:rgba(16,5,30,.95);box-shadow:0 20px 60px #000;display:none;font-size:12px}
+@media(max-width:780px){nav{padding:13px 15px}.brand-name{font-size:13px}.mark{width:42px;height:42px}.navright .wallet{display:none}.hero{padding-top:105px}.hero-inner{padding:30px 0}.hero p{font-size:15px}.cards{grid-template-columns:1fr}.row{grid-template-columns:1fr}.card{padding:27px}.social{flex-direction:column;align-items:flex-start}.btn{padding:11px 13px}section{padding:78px 18px}}
+</style>
+</head>
+<body>
+<div id="bg">
+  <video class="fill" autoplay muted loop playsinline preload="auto" poster="assets/arc-play-logo.jpg"><source src="assets/arc-play-bg.mp4" type="video/mp4"></video>
+  <video id="mainVideo" class="fit" autoplay muted loop playsinline preload="auto" poster="assets/arc-play-logo.jpg"><source src="assets/arc-play-bg.mp4" type="video/mp4"></video>
+</div>
+<div class="glow g1"></div><div class="glow g2"></div>
+
+<nav>
+  <a class="brand" href="#">
+    <span class="mark"><img src="assets/arc-play-logo.jpg" alt="Arc Play Games"></span>
+    <span class="brand-name">ARC PLAY GAMES</span>
+  </a>
+  <div class="navright">
+    <a class="btn x" href="https://x.com/ArcPlayGames" target="_blank" rel="noopener">𝕏 Follow</a>
+    <button id="wallet" class="btn wallet" type="button">◈ Connect Wallet</button>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+<div class="hero-inner">
+  <div class="badge"><i class="dot"></i> Building on Arc Network</div>
+  <h1>PLAY. <span>OWN.</span><br>EVOLVE.</h1>
+  <p><b>Arc Play Games</b> is building toward becoming one of the biggest GameFi ecosystems on the Arc Network — bringing games, digital ownership and on-chain experiences together in one premium destination.</p>
+  <div class="actions">
+    <a class="btn primary" href="#join">Join the Arc Play Community</a>
+    <a class="btn secondary" href="https://x.com/ArcPlayGames" target="_blank" rel="noopener">𝕏 Follow Arc Play Games</a>
+  </div>
+  <button id="sound" class="sound" type="button">🔊 Tap to enable cinematic audio</button>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2 class="title">The Arc GameFi Era</h2>
+<p class="sub">A community-first gaming destination designed to combine immersive games, digital ownership and on-chain progression.</p>
+<div class="cards">
+<article class="card"><div class="ico">✦</div><h3>Arc-native vision</h3><p>Built around Arc Network and its EVM-compatible environment, with a product direction focused on on-chain gaming.</p></article>
+<article class="card"><div class="ico">◈</div><h3>Player ownership</h3><p>Preparing for a future where player identities, rewards and digital assets can become part of a transparent on-chain ecosystem.</p></article>
+<article class="card"><div class="ico">⚡</div><h3>Premium experience</h3><p>A cinematic, mobile-first interface with wallet onboarding and community growth flows designed for GameFi.</p></article>
+</div>
+</div>
+</section>
+
+<section id="join">
+<div class="wrap join">
+<h2 class="title">Enter the Arc Play Community</h2>
+<p class="sub">Follow <b>@ArcPlayGames</b> on X and submit your username below. Submissions can be connected to your private Google Sheet for easy collection.</p>
+<div class="form">
+<form id="form">
+<div class="row">
+<div><label>X Username</label><input id="username" class="field" required placeholder="@yourusername"></div>
+<div><label>Wallet (optional)</label><input id="walletInput" class="field" placeholder="0x..."></div>
+</div>
+<label class="agree"><input id="followed" type="checkbox" required><span>I have followed <b>@ArcPlayGames</b> on X.</span></label>
+<div class="formbottom"><button class="btn primary" type="submit">Submit Username →</button><span id="status" class="status">Your entry is saved locally until a backend endpoint is connected.</span></div>
+</form>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap"><div class="social"><div><strong>Arc Play Games on X</strong><small>Announcements · builds · community drops · launch updates</small></div><a class="btn x" href="https://x.com/ArcPlayGames" target="_blank" rel="noopener">𝕏 @ArcPlayGames ↗</a></div></div>
+</section>
+</main>
+
+<footer>© 2026 Arc Play Games · Built for the Arc Network</footer>
+<div id="toast"></div>
+
+<script>
+const CONFIG={submissionEndpoint:""}; // Put your Google Apps Script /exec URL here.
+const toast=document.getElementById("toast");
+function msg(t){toast.textContent=t;toast.style.display="block";setTimeout(()=>toast.style.display="none",3500)}
+
+const mainVideo=document.getElementById("mainVideo");
+const fillVideo=document.querySelector("#bg .fill");
+const sound=document.getElementById("sound");
+sound.addEventListener("click",async()=>{
+  try{
+    mainVideo.muted=false;fillVideo.muted=true;
+    await mainVideo.play();
+    sound.textContent="🔊 Cinematic audio enabled";
+    msg("Cinematic audio enabled.");
+  }catch(e){msg("Your browser blocked audio. Tap again to enable it.");}
+});
+document.addEventListener("click",async()=>{
+  if(mainVideo.muted) return;
+  try{await mainVideo.play()}catch(e){}
+},{passive:true});
+
+const walletBtn=document.getElementById("wallet");
+async function connectWallet(){
+ if(!window.ethereum){msg("No EVM wallet detected. Open this site in MetaMask or another injected wallet.");return}
+ try{
+   const accounts=await window.ethereum.request({method:"eth_requestAccounts"});
+   const a=accounts[0];
+   try{
+     await window.ethereum.request({method:"wallet_switchEthereumChain",params:[{chainId:"0x13b2"}]});
+   }catch(e){
+     if(e.code===4902){
+       await window.ethereum.request({method:"wallet_addEthereumChain",params:[{
+         chainId:"0x13b2",chainName:"Arc",nativeCurrency:{name:"USD Coin",symbol:"USDC",decimals:18},
+         rpcUrls:["https://rpc.mainnet.arc.io"],blockExplorerUrls:["https://explorer.arc.io"]
+       }]});
+     }
+   }
+   walletBtn.classList.add("connected");walletBtn.textContent=a.slice(0,6)+"…"+a.slice(-4);
+   document.getElementById("walletInput").value=a;msg("Wallet connected.");
+ }catch(e){msg("Wallet connection cancelled.");}
+}
+walletBtn.addEventListener("click",connectWallet);
+
+document.getElementById("form").addEventListener("submit",async e=>{
+ e.preventDefault();
+ const username=document.getElementById("username").value.trim().replace(/^@/,"");
+ const wallet=document.getElementById("walletInput").value.trim();
+ if(!username)return;
+ const entry={username:"@"+username,wallet,createdAt:new Date().toISOString()};
+ const list=JSON.parse(localStorage.getItem("arcPlaySubmissions")||"[]");
+ list.push(entry);localStorage.setItem("arcPlaySubmissions",JSON.stringify(list));
+ if(CONFIG.submissionEndpoint){
+   try{await fetch(CONFIG.submissionEndpoint,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(entry)});document.getElementById("status").textContent="Submitted successfully."}
+   catch(e){document.getElementById("status").textContent="Saved locally; backend could not be confirmed."}
+ }else document.getElementById("status").textContent="Saved locally. Add the backend URL to collect submissions remotely.";
+ e.target.reset();msg("Username submitted. Welcome to Arc Play Games.");
+});
+</script>
+</body>
+</html>
