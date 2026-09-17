@@ -1,13 +1,19 @@
-ARC PLAY GAMES — FUTURISTIC TEXT EDITION
+ARC PLAY GAMES — SINGLE FILE / GITHUB READY
 
-Upload only index.html.
+Upload ONLY index.html.
 
-This edition keeps the embedded background video and logo, but changes the website copy into a more futuristic / sci-fi / GameFi style.
+The background video and logo are embedded directly inside index.html.
+No assets folder is needed.
 
-Main hero:
-ENTER. PLAY.
-ASCEND.
+The embedded video was compressed specifically to keep the complete HTML
+below GitHub's 25 MB single-file upload limit.
 
-The wording is intentionally promotional and forward-looking, without presenting future launch claims as guaranteed facts.
+The video remains portrait and is used as the full-page cinematic background.
+Audio is included, but mobile browsers normally require a user gesture before
+autoplaying audio.
 
-X links still point to @ArcPlayGames.
+X buttons point to:
+https://x.com/ArcPlayGames
+
+Note: username submissions in this version remain local to the visitor's
+browser unless a central backend (such as Google Apps Script) is connected.
