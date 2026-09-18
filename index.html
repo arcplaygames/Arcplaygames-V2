@@ -362,7 +362,7 @@ const arcRaceState=document.getElementById('arcRaceState');
 const arcSpeedEl=document.getElementById('arcSpeed');
 const arcGridEl=document.getElementById('arcGrid');
 const arcLapEl=document.getElementById('arcLap');
-const video=document.getElementById('arcRaceVideo');
+const arcRaceVideo=document.getElementById('arcRaceVideo');
 const canvas=document.getElementById('arcCanvas');
 const ctx=canvas.getContext('2d');
 const countdown=document.getElementById('raceCountdown');
@@ -377,11 +377,11 @@ function notify(msg){ if(typeof window.notify==='function') window.notify(msg); 
 
 function openArcGame(){
   arcGame.classList.add('open');arcGame.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
-  resizeRace(); video.currentTime=0; video.play().catch(()=>{});
+  resizeRace(); arcRaceVideo.currentTime=0; arcRaceVideo.play().catch(()=>{});
   resetRace();
 }
 function closeArcGame(){
-  stopRace();video.pause();arcGame.classList.remove('open');arcGame.setAttribute('aria-hidden','true');document.body.style.overflow='';
+  stopRace();arcRaceVideo.pause();arcGame.classList.remove('open');arcGame.setAttribute('aria-hidden','true');document.body.style.overflow='';
 }
 arcPoster?.addEventListener('click',openArcGame);
 arcPoster?.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')openArcGame()});
@@ -427,7 +427,7 @@ function resetRace(){
   arcResult.classList.remove('show');countdown.textContent='';resizeRace();drawRace();
 }
 async function startRace(){
-  resetRace();video.currentTime=0;video.play().catch(()=>{});
+  resetRace();arcRaceVideo.currentTime=0;arcRaceVideo.play().catch(()=>{});
   let c=3;arcRaceState.textContent='STARTING';
   countdown.textContent=c;
   const timer=setInterval(()=>{c--;countdown.textContent=c>0?c:'GO';if(c<=0){clearInterval(timer);setTimeout(()=>countdown.textContent='',450);running=true;raceStart=performance.now();last=raceStart;arcRaceState.textContent='RACING';raf=requestAnimationFrame(loop)}},700);
@@ -452,7 +452,7 @@ function loop(t){
   lap=Math.min(3,1+Math.floor(player.progress));
   arcLapEl.textContent=lap+' / 3';
   arcSpeedEl.textContent=Math.round(player.speed*185);
-  if(player.progress>=3){finish=true;running=false;arcRaceState.textContent='FINISH';showResult();video.pause()}
+  if(player.progress>=3){finish=true;running=false;arcRaceState.textContent='FINISH';showResult();arcRaceVideo.pause()}
   drawRace();if(running)raf=requestAnimationFrame(loop);
 }
 
