@@ -266,8 +266,11 @@ footer{padding:45px 20px 65px;border-top:1px solid rgba(75,213,255,.1);backgroun
   <div class="arcTokenCard">
     <div class="arcTokenEyebrow">ARC PLAY GAMES · COMMUNITY</div>
     <h2>$ARCPLAY — THE GAMEFI COMMUNITY TOKEN</h2>
-    <div class="arcCA"><div class="arcCAcode" id="arcplayCA"></div><button class="arc" id="copyArcplayCA"></button></div>
-    <p>Built for the Arc Play Games ecosystem.<br>A community-driven token connecting players, gamers and on-chain experiences.</p>
+    <div class="arcCA">
+      <div class="arcCAcode" id="arcplayCA" role="button" tabindex="0" title="Click to copy Contract Address">0xbb218dbF31FDabCbd95A3A1c2b7B4aDdC7765Fb8</div>
+      <button class="arc" id="copyArcplayCA" type="button">COPY CA</button>
+    </div>
+    <p>Built for the Arc Play Games ecosystem on Robinhood Network.<br>A community-driven token connecting players, gamers and on-chain experiences.</p>
     <div class="arcTokenTag">PLAY. OWN. EVOLVE.</div>
   </div>
 </section>
@@ -578,7 +581,7 @@ makeRivals();resizeRace();drawRace();
 </script>
 
 <script>
-(function(){const b=document.getElementById('copyArcplayCA');const c=document.getElementById('arcplayCA');if(!b||!c)return;b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(c.textContent.trim());const old=b.textContent;b.textContent='COPIED ✓';setTimeout(()=>b.textContent=old,1600)}catch(e){const t=document.createElement('textarea');t.value=c.textContent.trim();document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();b.textContent='COPIED ✓';setTimeout(()=>b.textContent='',1600)}})})();
+(function(){const b=document.getElementById('copyArcplayCA');const c=document.getElementById('arcplayCA');if(!b||!c)return;async function copyCA(){const value=c.textContent.trim();try{await navigator.clipboard.writeText(value)}catch(e){const t=document.createElement('textarea');t.value=value;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}const old=b.textContent;b.textContent='COPIED ✓';setTimeout(()=>b.textContent=old,1600)}b.addEventListener('click',copyCA);c.addEventListener('click',copyCA);c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ') {e.preventDefault();copyCA()}})})();
 </script>
 </body>
 </html>
